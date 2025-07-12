@@ -6,8 +6,8 @@ services:
       - 8080:80
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: user
-      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_USER: myuser
+      WORDPRESS_DB_PASSWORD: mypassword
       WORDPRESS_DB_NAME: wp_db
     volumes:
       - wordpress:/var/www/html
@@ -18,9 +18,9 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: wp_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: mypassword
     volumes:
       - db:/var/lib/mysql
 volumes:
