@@ -17,7 +17,7 @@ sudo docker exec docker-compose-wordpress-wordpress-1 mv wp-cli.phar /usr/local/
 # sudo wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com'  --ssh=docker:docker-compose-wordpress-wordpress-1 --allow-root
 sudo docker exec docker-compose-wordpress-wordpress-1 wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com' --allow-root && \
 sudo docker cp $wpbackup docker-compose-wordpress-wordpress-1:/ && \
-sudo docker exec docker-compose-wordpress-wordpress-1 wp import /$wpbackup --authors=create && \
+sudo docker exec docker-compose-wordpress-wordpress-1 wp import /$wpbackup --authors=create --allow-root && \
 
 sudo yum install dotnet-runtime-8.0 -y && \
 sudo wget --trust-server-names https://www.dynu.com/support/downloadfile/70 && \
