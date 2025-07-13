@@ -8,6 +8,7 @@ sudo chmod 755 /usr/bin/docker-compose && \
 cd /docker-compose-wordpress && \
 sudo docker-compose up -d && \
 
+sleep 1m
 # sudo docker exec docker-compose-wordpress-wordpress-1 apt install php-cli -y
 sudo docker exec docker-compose-wordpress-wordpress-1 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
 sudo docker exec docker-compose-wordpress-wordpress-1 chmod +x wp-cli.phar && \
