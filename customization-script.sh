@@ -5,7 +5,7 @@ sudo systemctl enable docker.service && \
 sudo systemctl start docker.service && \
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-linux-$(uname -m) -o /usr/bin/docker-compose && \
 sudo chmod 755 /usr/bin/docker-compose && \
-cd docker-compose-wordpress && \
+cd /docker-compose-wordpress && \
 sudo docker-compose up -d && \
 sudo yum install dotnet-runtime-8.0 && \
 sudo wget --trust-server-names https://www.dynu.com/support/downloadfile/70 && \
