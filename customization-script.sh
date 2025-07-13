@@ -9,11 +9,11 @@ cd /docker-compose-wordpress && \
 sudo docker-compose up -d && \
 
 # sudo docker exec docker-compose-wordpress-wordpress-1 apt install php-cli -y
-sudo docker exec docker-compose-wordpress-wordpress-1 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-sudo docker exec docker-compose-wordpress-wordpress-1 chmod +x wp-cli.phar
-sudo docker exec docker-compose-wordpress-wordpress-1 sudo mv wp-cli.phar /usr/local/bin/wp
+sudo docker exec docker-compose-wordpress-wordpress-1 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+sudo docker exec docker-compose-wordpress-wordpress-1 chmod +x wp-cli.phar && \
+sudo docker exec docker-compose-wordpress-wordpress-1 sudo mv wp-cli.phar /usr/local/bin/wp && \
 # sudo wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com'  --ssh=docker:docker-compose-wordpress-wordpress-1 --allow-root
-sudo docker exec docker-compose-wordpress-wordpress-1 wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com' --allow-root
+sudo docker exec docker-compose-wordpress-wordpress-1 wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com' --allow-root && \
 
 sudo yum install dotnet-runtime-8.0 -y && \
 sudo wget --trust-server-names https://www.dynu.com/support/downloadfile/70 && \
