@@ -7,9 +7,9 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 sudo chmod 755 /usr/bin/docker-compose && \
 cd /docker-compose-wordpress && \
 sudo docker-compose up -d && \
-sudo yum install dotnet-runtime-8.0 && \
+sudo yum install dotnet-runtime-8.0 -y && \
 sudo wget --trust-server-names https://www.dynu.com/support/downloadfile/70 && \
-sudo yum install ./dynu-ip-update-client_1.0.2-1_amd64.rpm && \
+sudo yum install ./dynu-ip-update-client_1.0.2-1_amd64.rpm -y && \
 sudo cp /docker-compose-wordpress/appsettings.json /usr/share/dynu-ip-update-client/appsettings.json && \
 sudo systemctl restart dynu-ip-update-client.service && \
 sleep 5s && \
