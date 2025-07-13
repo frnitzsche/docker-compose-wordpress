@@ -25,8 +25,8 @@ sed '/root         \/usr\/share\/nginx\/html;/r'<(cat <<EOF
             proxy_set_header X-Forwarded-Proto \$scheme;
         }
 EOF
-) -i -- /etc/nginx/nginx.conf
-
+) -i -- /etc/nginx/nginx.conf && \
+sudo systemctl restart nginx.service && \
 sudo certbot --nginx -d $host -m my@mail.com --agree-tos -n
 
         # location / {
