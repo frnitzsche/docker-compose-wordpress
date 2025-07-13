@@ -16,6 +16,9 @@ sudo docker exec docker-compose-wordpress-wordpress-1 chmod +x wp-cli.phar && \
 sudo docker exec docker-compose-wordpress-wordpress-1 mv wp-cli.phar /usr/local/bin/wp && \
 # sudo wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com'  --ssh=docker:docker-compose-wordpress-wordpress-1 --allow-root
 sudo docker exec docker-compose-wordpress-wordpress-1 wp core install --title='My Website' --url='wp-anishev.mywire.org'  --admin_user='alex' --admin_password='478312zxc' --admin_email='my@email.com' --allow-root && \
+
+sudo docker exec docker-compose-wordpress-wordpress-1 wp plugin install wordpress-importer --activate --allow-root && \
+
 sudo docker cp $wpbackup docker-compose-wordpress-wordpress-1:/ && \
 sudo docker exec docker-compose-wordpress-wordpress-1 wp import /$wpbackup --authors=create --allow-root && \
 
