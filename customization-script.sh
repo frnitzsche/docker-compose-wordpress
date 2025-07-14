@@ -39,6 +39,6 @@ EOF
 
 sudo systemctl enable nginx.service && \
 sudo systemctl restart nginx.service && \
-sudo certbot --nginx -d $host -m my@mail.com --agree-tos -n
+sudo certbot --nginx -d $host -m my@mail.com --agree-tos -n --test-cert
 
 
