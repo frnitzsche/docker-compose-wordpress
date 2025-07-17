@@ -18,10 +18,7 @@ sudo docker exec docker-compose-wordpress-wordpress-1 wp plugin install wordpres
 sudo docker cp $wpbackup docker-compose-wordpress-wordpress-1:/ && \
 sudo docker exec docker-compose-wordpress-wordpress-1 wp import /$wpbackup --authors=create --allow-root && \
 sudo yum install dotnet-runtime-8.0 -y && \
-sudo wget --trust-server-names https://www.dynu.com/support/downloadfile/70 && \
-sudo yum install ./dynu-ip-update-client_1.0.2-1_amd64.rpm -y && \
-sudo cp /docker-compose-wordpress/appsettings.json /usr/share/dynu-ip-update-client/appsettings.json && \
-sudo systemctl restart dynu-ip-update-client.service && \
+curl "http://api.dynu.com/nic/update?hostname=$host&myip=$(curl -s ifconfig.me)&password=faf0152cfacc4704af98927ae6dd55f4"
 sleep 15s && \
 sudo yum install nginx certbot certbot-nginx -y && \
 sudo sed -i "s/server_name  _;/server_name ${host};/g" /etc/nginx/nginx.conf && \
